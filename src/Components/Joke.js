@@ -6,7 +6,6 @@ export const Joke = () => {
   const fetchJokeData = async () => {
     const response = await fetch("https://v2.jokeapi.dev/joke/Any");
     const data = await response.json();
-    console.log(data.type);
     const transformedJoke = {
       category: data.category,
       type: data.type,
@@ -16,7 +15,6 @@ export const Joke = () => {
       safe: data.safe,
     };
     setJoke(transformedJoke);
-    console.log(transformedJoke);
   };
   return (
     <React.Fragment>
